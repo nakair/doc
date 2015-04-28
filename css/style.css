@@ -13,12 +13,10 @@ body {
     padding-top: 5px;
 }
 
-a {
+a,
+a:hover,
+a:focus {
     display: block;
-}
-
-ul > li > a,
-ul > li > a:hover {
     color: #000;
     text-decoration: none;
 }
@@ -75,12 +73,11 @@ div[id*=price-report] > ul > li > small {
     padding-left: 5px;
 }
 #collapseMemberT > div > a {
-    font-size: 11px;
+    font-size: 10px;
 }
 
 body > footer > p {
     text-align: center;
     font-size: 12px;
     margin-top: 15px;
-
 }
