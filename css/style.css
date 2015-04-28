@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+@import url("bootstrap.min.css?20150330");
+
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    max-width: 460px;
+}
+
+#timestamp {
+    float: right;
+    padding-top: 5px;
+}
+
+a {
+    display: block;
+}
+
+ul > li > a,
+ul > li > a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+ul > li > a > button {
+    float: right;
+}
+ul > li > a > button > span {
+    padding-right: 5px;
+}
+
+.panel-default > .panel-heading,
+ .panel-default > .panel-heading > a {
+    color: #FFF;
+    background-color: #000000;
+}
+
+.list-group {
+    margin-bottom: 0px;
+}
+
+div[id*=price-report] > ul > li {
+    border-top-width: 1px;
+    border-color: #ddd;
+    border-style: solid;
+}
+div[id*=price-report] > ul > li {
+    font-weight: bold;
+    font-size: 16px;
+}
+div[id*=price-report] > ul > li > small {
+    font-weight: normal;
+    padding-left: 60px;
+}
+
+.table {
+    margin-bottom: 0px;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.table > tbody > tr:nth-child(1) > th,
+ .table > tbody > tr:nth-child(1) > td{
+    border-top: 0px;
+}
+
+.collapsing {
+    -webkit-transition-duration:.5s;
+    -o-transition-duration:.5s;
+    transition-duration:.5s;
+}
+
+#collapseMember > a > span {
+    padding-left: 5px;
+}
+
+body > footer > p {
+    text-align: center;
+    font-size: 12px;
+}
+
+#collapseMemberT > div > a {
+    font-size: 13px;
+}
+
