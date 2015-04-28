@@ -30,8 +30,14 @@ ul > li > a > button > span {
     padding-right: 5px;
 }
 
+.panel-default {
+    margin-bottom: 15px;
+}
+.panel-default > .panel-heading {
+    border-radius: 2px;
+}
 .panel-default > .panel-heading,
- .panel-default > .panel-heading > a {
+.panel-default > .panel-heading > a {
     color: #FFF;
     background-color: #000000;
 }
@@ -41,17 +47,12 @@ ul > li > a > button > span {
 }
 
 div[id*=price-report] > ul > li {
-    border-top-width: 1px;
-    border-color: #ddd;
-    border-style: solid;
-}
-div[id*=price-report] > ul > li {
     font-weight: bold;
     font-size: 16px;
 }
 div[id*=price-report] > ul > li > small {
     font-weight: normal;
-    padding-left: 60px;
+    padding-left: 40px;
 }
 
 .table {
@@ -60,27 +61,26 @@ div[id*=price-report] > ul > li > small {
     font-size: 14px;
 }
 
-.table > tbody > tr:nth-child(1) > th,
- .table > tbody > tr:nth-child(1) > td{
-    border-top: 0px;
-}
-
 .collapsing {
     -webkit-transition-duration:.5s;
     -o-transition-duration:.5s;
     transition-duration:.5s;
 }
 
+#collapsePrice > li > div[id*=collapse] {
+    padding-bottom: 0px;
+}
+
 #collapseMember > a > span {
     padding-left: 5px;
+}
+#collapseMemberT > div > a {
+    font-size: 11px;
 }
 
 body > footer > p {
     text-align: center;
     font-size: 12px;
-}
+    margin-top: 15px;
 
-#collapseMemberT > div > a {
-    font-size: 13px;
 }
-

@@ -11,8 +11,7 @@
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
-<body class="container">
-
+<body class="container panel-group" id="accordion">
 
 <script type="text/javascript" src="js/jquery-jsonpricereport.js" charset="UTF-8"></script>
 <script><!--
@@ -28,25 +27,27 @@
 </script>
 
 <div class="panel panel-default">
-    <div class="panel-heading">相場表<small id="timestamp"></small></div>
-    <ul class="list-group block-link">
+    <div class="panel-heading"><small id="timestamp"></small>
+        <a href="#collapsePrice" data-toggle="collapse" data-parent="#accordion">相場表</a>
+    </div>
+    <ul id="collapsePrice" class="list-group block-link collapse in">
         <li class="list-group-item">
-            <a href="#collapse55" data-toggle="collapse">東京コメ
+            <a>東京コメ
                 <button type="button" class="btn btn-default btn-xs" onclick="window.open('http://ode.or.jp/market/chart_55.html')">
                     <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>チャート
                 </button>
             </a>
-            <div id="collapse55" class="panel-collapse panel-body collapse list-group" aria-expanded="false">
+            <div id="collapse55" class="panel-collapse panel-body list-group" aria-expanded="false">
                 <div id="price-report55"></div>
             </div>
         </li>
         <li class="list-group-item">
-            <a href="#collapse50" data-toggle="collapse">大阪コメ
+            <a>大阪コメ
                 <button type="button" class="btn btn-default btn-xs" onclick="window.open('http://ode.or.jp/market/chart_50.html')">
                     <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>チャート
                 </button>
             </a>
-            <div id="collapse50" class="panel-collapse panel-body collapse list-group" aria-expanded="false">
+            <div id="collapse50" class="panel-collapse panel-body list-group" aria-expanded="false">
                 <div id="price-report50"></div>
             </div>
         </li>
@@ -55,9 +56,9 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <a href="#collapseMember" data-toggle="collapse">商品先物業者_リスト</a>
+        <a href="#collapseMember" data-toggle="collapse" data-parent="#accordion">商品先物業者_リスト</a>
     </div>
-    <div id="collapseMember" class="panel-collapse panel-body list-group collapse" aria-expanded="false">
+    <div id="collapseMember" class="panel-collapse collapse panel-body list-group" aria-expanded="false">
         <a class="list-group-item" href="http://www.as-tem.com/" target="_blank">株式会社アステム<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
         <a class="list-group-item" href="http://www.alphix.co.jp/" target="_blank">株式会社アルフィックス<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
         <a class="list-group-item" href="http://www.imamura.jp/" target="_blank">今村証券株式会社<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
@@ -75,7 +76,7 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <a href="#collapseMemberT" data-toggle="collapse">商品先物業者_テーブル</a>
+        <a href="#collapseMemberT" data-toggle="collapse" data-parent="#accordion" >商品先物業者_テーブル</a>
     </div>
 
     <div id="collapseMemberT" class="panel-collapse panel-body collapse" aria-expanded="false">
