@@ -1,11 +1,26 @@
 @charset "utf-8";
 
-@import url("bootstrap.min.css?20150330");
-
 body {
     padding-top: 20px;
     padding-bottom: 20px;
-    max-width: 460px;
+}
+
+.header {
+    margin: 0;
+    padding: 0;
+    height: 46px;
+    display: block;
+    background-image: url(../images/logo.gif);
+    background-repeat: no-repeat;
+    background-position: left center;
+
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 20px;
+}
+
+.badge {
+    float: right;
+    margin-top: 15px;
 }
 
 #timestamp {
@@ -21,11 +36,27 @@ a:focus {
     text-decoration: none;
 }
 
-ul > li > a > button {
+
+ul > li > a.btn {
     float: right;
 }
-ul > li > a > button > span {
+ul > li > a.btn > span {
     padding-right: 5px;
+}
+
+div > ul > li > ul {
+    margin-top: 10px;
+}
+ul > li > a > div > div:nth-child(1) {
+    font-weight: bold;
+    font-size: 16px;
+    padding-right: 0px;
+}
+ul > li > a > div > div:nth-child(2),
+ul > li > a > div > div:nth-child(3) {
+    font-size: 13px;
+    margin-top: 3px;
+    padding-right: 0px;
 }
 
 .panel-default {
@@ -33,40 +64,27 @@ ul > li > a > button > span {
 }
 .panel-default > .panel-heading {
     border-radius: 2px;
+    background-image: linear-gradient(to bottom,#6C6C6C 0,#000 100%);
+        color: #FFF;
 }
-.panel-default > .panel-heading,
-.panel-default > .panel-heading > a {
+.panel-default > .panel-heading > a,
+.panel-default > .panel-heading > a:hover,
+.panel-default > .panel-heading > a:focus {
     color: #FFF;
-    background-color: #000000;
 }
 
 .list-group {
     margin-bottom: 0px;
-}
-
-div[id*=price-report] > ul > li {
-    font-weight: bold;
-    font-size: 16px;
-}
-div[id*=price-report] > ul > li > small {
-    font-weight: normal;
-    padding-left: 40px;
+    -webkit-box-shadow: none;
 }
 
 .table {
     margin-bottom: 0px;
-    font-weight: normal;
-    font-size: 14px;
-}
-
-.collapsing {
-    -webkit-transition-duration:.5s;
-    -o-transition-duration:.5s;
-    transition-duration:.5s;
 }
 
 #collapsePrice > li > div[id*=collapse] {
     padding-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 #collapseMember > a > span {

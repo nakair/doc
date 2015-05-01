@@ -1,3 +1,13 @@
+
+$(function() {
+$('li#price-report55').jsonpricereport({
+        jsonfile: './price_55.json'
+    })
+$('li#price-report50').jsonpricereport({
+        jsonfile: './price_50.json'
+    })
+});
+
 // ----------------------------------------
 // 相場表テーブル json読み込み プラグイン
 // ----------------------------------------
@@ -19,10 +29,6 @@
             return false; // 引数不足
         }
 
-        // 同期通信(JSON取得を待ち合わせる)
-        $.ajaxSetup({async: false});
-        $.ajaxSetup({scriptCharset: "utf-8" , contentType: "application/json; charset=utf-8"});
-
         $(this).each(function(){
             var self = $(this);
             var a = args.jsonfile;
@@ -33,22 +39,26 @@
                 var items = [];
                 var prices = new Array(json.colsize);
                 $.each(json.prices, function(i, sessions) {
-                    $.each(sessions.values, function(i, value) {
+                    $.each(sessions.values, function(j, value) {
                         if(value=="") return;
-                        prices[i] = value;
+                        prices[j] = value;
                     });
                 });
                 $('#timestamp').append(commodity == '55' ? json.timestamp : '');
                 for (var i=0; i < json.colsize; i++) {
                     // 限月一覧 (限月、約定値段(前日比)、出来高)
                     var durations = json.durations[i] == '' ? '新甫' : json.durations[i]
-                    items.push('<li class="list-group-item" data-toggle="collapse" href="#collapse' + commodity + i + '" aria-controls="collapse' + i + '">');
-                    items.push(json.months[i] + '&nbsp');
-                    items.push('<small>' + prices[i] + ' (' + durations + ')' + '&nbsp');
-                    items.push(json.volumes[i] + '</small>');
+                    items.push('<li class="list-group-item">');
+                    items.push('<a data-toggle="collapse" href="#collapse' + commodity + i + '" aria-controls="collapse' + i + '">');
+                    items.push('<div class="row">');
+                    items.push('<div class="col-xs-3">' + json.months[i] + '</div>');
+                    items.push('<div class="col-xs-4">' + prices[i] + ' (' + durations + ')</div>');
+                    items.push('<div class="col-xs-4">' + json.volumes[i] + '</div>');
+                    items.push('</div>')
+                    items.push('</a>')
 
                     // 詳細テーブル
-                    items.push('<div id="collapse' + commodity + i + '" class="panel-collapse collapse panel-body">');
+                    items.push('<div id="collapse' + commodity + i + '" class="collapse panel-body">');
                     items.push('<table class="table">');
                     items.push('<tbody>');
 
@@ -69,15 +79,15 @@
                         items.push('<tr>');
                         if( json.amsize >= 0 ){
                             if( 0 == i ){
-                                items.push('<th rowspan=' + json.amsize + ' class="rowname">前場</th>');
+                                items.push('<th rowspan=' + json.amsize + '>前場</th>');
                             }
                         }
                         if( json.pmsize >= 0 ){
                             if( json.amsize == i ){
-                                items.push('<th rowspan=' + json.pmsize + ' class="rowname">後場</th>');
+                                items.push('<th rowspan=' + json.pmsize + '>後場</th>');
                             }
                         }
-                        items.push('<th class="rowname">'+sessionName(sessions.sid)+'</th>');
+                        items.push('<th>'+sessionName(sessions.sid)+'</th>');
                         items.push('<td >'+ sessions.values[i] +'</td>');
                         items.push('</tr>');
                     });
@@ -88,7 +98,7 @@
                 }
 
                     // 内容の入れ替え.
-                    self.contents().remove();
+//                    self.contents().remove();
 
                     $('<ul/>', {
                         'class': 'list-group',

@@ -5,51 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>大阪堂島商品取引所</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <link href="css/style.css" rel="stylesheet">
-    <!--<script src="js/bk/jquery-1.11.2.js"></script>-->
-    <!--<script src="js/bk/bootstrap.min.js"></script>-->
-    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 <body class="container panel-group" id="accordion">
 
-<script type="text/javascript" src="js/jquery-jsonpricereport.js" charset="UTF-8"></script>
-<script><!--
-	jQuery(function($){
-		$('div#price-report55').jsonpricereport({
-			jsonfile: './price_55.json'
-		})
-		$('div#price-report50').jsonpricereport({
-			jsonfile: './price_50.json'
-		})
-	});
-	//-->
-</script>
+<div class="header clearfix">
+    <!--<h3 class="">大阪堂島商品取引所</h3>-->
+    <header><a href="http://ode.or.jp/index.html" target="_pc"><span class="badge btn-success" style="">PCサイト</span></a></header>
 
+</div>
 <div class="panel panel-default">
     <div class="panel-heading"><small id="timestamp"></small>
         <a href="#collapsePrice" data-toggle="collapse" data-parent="#accordion">相場表</a>
     </div>
     <ul id="collapsePrice" class="list-group block-link collapse in">
-        <li class="list-group-item">
-            <a>東京コメ
-                <button type="button" class="btn btn-default btn-xs" onclick="window.open('http://ode.or.jp/market/chart_55.html')">
-                    <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>チャート
-                </button>
+        <li id="price-report55" class="list-group-item">東京コメ
+            <a type="button" class="btn btn-default btn-xs" href="http://ode.or.jp/market/chart_55.html" target="_chart">
+                <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>チャート
             </a>
-            <div id="collapse55" class="panel-collapse panel-body list-group" aria-expanded="false">
-                <div id="price-report55"></div>
-            </div>
         </li>
-        <li class="list-group-item">
-            <a>大阪コメ
-                <button type="button" class="btn btn-default btn-xs" onclick="window.open('http://ode.or.jp/market/chart_50.html')">
-                    <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>チャート
-                </button>
+        <li id="price-report50" class="list-group-item">大阪コメ
+            <a type="button" class="btn btn-default btn-xs" href="http://ode.or.jp/market/chart_55.html" target="_chart">
+                <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>チャート
             </a>
-            <div id="collapse50" class="panel-collapse panel-body list-group" aria-expanded="false">
-                <div id="price-report50"></div>
-            </div>
         </li>
     </ul>
 </div>
@@ -59,18 +39,18 @@
         <a href="#collapseMember" data-toggle="collapse" data-parent="#accordion">商品先物業者_リスト</a>
     </div>
     <div id="collapseMember" class="panel-collapse collapse panel-body list-group" aria-expanded="false">
-        <a class="list-group-item" href="http://www.as-tem.com/" target="_blank">株式会社アステム<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
-        <a class="list-group-item" href="http://www.alphix.co.jp/" target="_blank">株式会社アルフィックス<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
-        <a class="list-group-item" href="http://www.imamura.jp/" target="_blank">今村証券株式会社<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
-        <a class="list-group-item" href="http://www.evojapan.com/" target="_blank">EVOLUTION JAPAN株式会社<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
-        <a class="list-group-item" href="http://www.okachi.co.jp" target="_blank">岡地株式会社<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
-        <a class="list-group-item" href="http://www.okato.co.jp/" target="_blank">岡藤商事株式会社<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
-        <a class="list-group-item" href="http://www.okayasu-shoji.co.jp/" target="_blank">岡安商事株式会社<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
-        <a class="list-group-item" href="http://www.comtex.co.jp/" target="_blank">株式会社コムテックス<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
-        <a class="list-group-item" href="http://www.sunward-t.co.jp/" target="_blank">サンワード貿易株式会社<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
-        <a class="list-group-item" href="http://www.dai-ichi.co.jp/" target="_blank">第一商品株式会社<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
-        <a class="list-group-item" href="http://www.unicom.co.jp/" target="_blank">日本ユニコム株式会社<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
-        <a class="list-group-item" href="http://www.yutaka-shoji.co.jp/" target="_blank">豊商事株式会社<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
+        <a class="list-group-item" href="http://www.as-tem.com/" target="_member">株式会社アステム<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
+        <a class="list-group-item" href="http://www.alphix.co.jp/" target="_member">株式会社アルフィックス<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
+        <a class="list-group-item" href="http://www.imamura.jp/" target="_member">今村証券株式会社<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
+        <a class="list-group-item" href="http://www.evojapan.com/" target="_member">EVOLUTION JAPAN株式会社<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
+        <a class="list-group-item" href="http://www.okachi.co.jp" target="_member">岡地株式会社<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
+        <a class="list-group-item" href="http://www.okato.co.jp/" target="_member">岡藤商事株式会社<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
+        <a class="list-group-item" href="http://www.okayasu-shoji.co.jp/" target="_member">岡安商事株式会社<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
+        <a class="list-group-item" href="http://www.comtex.co.jp/" target="_member">株式会社コムテックス<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
+        <a class="list-group-item" href="http://www.sunward-t.co.jp/" target="_member">サンワード貿易株式会社<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
+        <a class="list-group-item" href="http://www.dai-ichi.co.jp/" target="_member">第一商品株式会社<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
+        <a class="list-group-item" href="http://www.unicom.co.jp/" target="_member">日本ユニコム株式会社<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
+        <a class="list-group-item" href="http://www.yutaka-shoji.co.jp/" target="_member">豊商事株式会社<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
     </div>
 </div>
 
@@ -81,51 +61,40 @@
 
     <div id="collapseMemberT" class="panel-collapse panel-body collapse" aria-expanded="false">
         <div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
-            <a href="http://www.as-tem.com/" target="_blank" class="btn btn-default" role="button">株式会社アステム</a>
-            <a href="http://www.okayasu-shoji.co.jp/" target="_blank" class="btn btn-default" role="button">岡安商事株式会社</a>
+            <a href="http://www.as-tem.com/" target="_member" class="btn btn-default" role="button">株式会社アステム</a>
+            <a href="http://www.okayasu-shoji.co.jp/" target="_member" class="btn btn-default" role="button">岡安商事株式会社</a>
         </div>
         <div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
-            <a href="http://www.alphix.co.jp/" target="_blank"  class="btn btn-default" role="button">株式会社アルフィックス</a>
-            <a href="http://www.comtex.co.jp/" target="_blank" class="btn btn-default" role="button">株式会社コムテックス</a>
+            <a href="http://www.alphix.co.jp/" target="_member"  class="btn btn-default" role="button">株式会社アルフィックス</a>
+            <a href="http://www.comtex.co.jp/" target="_member" class="btn btn-default" role="button">株式会社コムテックス</a>
         </div>
         <div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
-            <a href="http://www.imamura.jp/" target="_blank" class="btn btn-default" role="button">今村証券株式会社</a>
-            <a href="http://www.sunward-t.co.jp/" target="_blank" class="btn btn-default" role="button">サンワード貿易株式会社</a>
+            <a href="http://www.imamura.jp/" target="_member" class="btn btn-default" role="button">今村証券株式会社</a>
+            <a href="http://www.sunward-t.co.jp/" target="_member" class="btn btn-default" role="button">サンワード貿易株式会社</a>
         </div>
         <div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
-            <a href="http://www.evojapan.com/" target="_blank" class="btn btn-default" role="button">EVOLUTION JAPAN株式会社</a>
-            <a href="http://www.dai-ichi.co.jp/" target="_blank" class="btn btn-default" role="button">第一商品株式会社</a>
+            <a href="http://www.evojapan.com/" target="_member" class="btn btn-default" role="button">EVOLUTION JAPAN株式会社</a>
+            <a href="http://www.dai-ichi.co.jp/" target="_member" class="btn btn-default" role="button">第一商品株式会社</a>
         </div>
         <div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
-            <a href="http://www.okachi.co.jp" target="_blank" class="btn btn-default" role="button">岡地株式会社</a>
-            <a href="http://www.unicom.co.jp/" target="_blank" class="btn btn-default" role="button">日本ユニコム株式会社</a>
+            <a href="http://www.okachi.co.jp" target="_member" class="btn btn-default" role="button">岡地株式会社</a>
+            <a href="http://www.unicom.co.jp/" target="_member" class="btn btn-default" role="button">日本ユニコム株式会社</a>
         </div>
         <div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
-            <a href="http://www.okato.co.jp/" target="_blank" class="btn btn-default" role="button">岡藤商事株式会社</a>
-            <a href="http://www.yutaka-shoji.co.jp/" target="_blank" class="btn btn-default" role="button">豊商事株式会社</a>
+            <a href="http://www.okato.co.jp/" target="_member" class="btn btn-default" role="button">岡藤商事株式会社</a>
+            <a href="http://www.yutaka-shoji.co.jp/" target="_member" class="btn btn-default" role="button">豊商事株式会社</a>
         </div>
     </div>
-
-    <!--<div id="collapseMemberT" class="panel-collapse panel-body collapse" aria-expanded="false">-->
-        <!--<table id="collapseMemberT" class="panel-collapse panel-body collapse table table-bordered" aria-expanded="false">-->
-            <!--<tbody>-->
-                <!--<tr><td>株式会社アステム</td><td>岡安商事株式会社</td></tr>-->
-                <!--<tr><td>株式会社アルフィックス</td><td>株式会社コムテックス</td></tr>-->
-                <!--<tr><td>今村証券株式会社</td><td>サンワード貿易株式会社</td></tr>-->
-                <!--<tr><td>EVOLUTION JAPAN株式会社</td><td>第一商品株式会社</td></tr>-->
-                <!--<tr><td>岡地株式会社</td><td>日本ユニコム株式会社</td></tr>-->
-                <!--<tr><td>岡藤商事株式会社</td><td>豊商事株式会社</td></tr>-->
-            <!--</tbody>-->
-        <!--</table>-->
-    <!--</div>-->
 </div>
 
 <footer class="footer">
     <!--<div class="container">-->
-        <p class="text-muted">Copyright &copy; 2013- Osaka Dojima Commodity Exchange.All Right Reserved.
-            <a href="http://ode.or.jp/" target="_blank"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
-        </p>
+        <p class="text-muted">Copyright &copy; 2013- Osaka Dojima Commodity Exchange.All Right Reserved.</p>
     <!--</div>-->
 </footer>
+
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery-jsonpricereport.js"></script>
 </body>
 </html>
