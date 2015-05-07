@@ -1,10 +1,10 @@
 
 $(function() {
 $('li#price-report55').jsonpricereport({
-        jsonfile: './price_55.json'
+        commodity: '55'
     })
 $('li#price-report50').jsonpricereport({
-        jsonfile: './price_50.json'
+        commodity: '50'
     })
 });
 
@@ -22,20 +22,19 @@ $('li#price-report50').jsonpricereport({
     $.fn.jsonpricereport = function(options){
 
         var args = $.extend({
-            jsonfile: null
+            commodity: null
         },options || {});
 
-        if( !args.jsonfile ) {
+        if( !args.commodity ) {
             return false; // 引数不足
         }
 
         $(this).each(function(){
             var self = $(this);
-            var a = args.jsonfile;
-            var commodity = a.substr(a.indexOf("_") + 1, 2);
+            var jsonfile = './price_' + args.commodity + '.json';
 
             var timestamp = '?timestamp='+(new Date()).getTime(); // IEのajaxリクエストのキャッシュを防ぐ対策
-            $.getJSON( args.jsonfile + timestamp, function(json) {
+            $.getJSON( jsonfile + timestamp, function(json) {
                 var items = [];
                 var prices = new Array(json.colsize);
                 $.each(json.prices, function(i, sessions) {
@@ -44,21 +43,21 @@ $('li#price-report50').jsonpricereport({
                         prices[j] = value;
                     });
                 });
-                $('#timestamp').append(commodity == '55' ? json.timestamp : '');
+                $('#timestamp').append(args.commodity == '55' ? json.timestamp : '');
                 for (var i=0; i < json.colsize; i++) {
                     // 限月一覧 (限月、約定値段(前日比)、出来高)
                     var durations = json.durations[i] == '' ? '新甫' : json.durations[i]
                     items.push('<li class="list-group-item">');
-                    items.push('<a data-toggle="collapse" href="#collapse' + commodity + i + '" aria-controls="collapse' + i + '">');
+                    items.push('<a data-toggle="collapse" href="#collapse' + args.commodity + i + '" aria-controls="collapse' + i + '">');
                     items.push('<div class="row">');
-                    items.push('<div class="col-xs-3">' + json.months[i] + '</div>');
-                    items.push('<div class="col-xs-4">' + prices[i] + ' (' + durations + ')</div>');
-                    items.push('<div class="col-xs-4">' + json.volumes[i] + '</div>');
+                    items.push('<div class="col-xs-3 col-sm-2 col-md-2">' + json.months[i] + '</div>');
+                    items.push('<div class="col-xs-4 col-sm-3 col-md-3">' + prices[i] + ' (' + durations + ')</div>');
+                    items.push('<div class="col-xs-4 col-sm-3 col-md-3">' + json.volumes[i] + '</div>');
                     items.push('</div>')
                     items.push('</a>')
 
                     // 詳細テーブル
-                    items.push('<div id="collapse' + commodity + i + '" class="collapse panel-body">');
+                    items.push('<div id="collapse' + args.commodity + i + '" class="collapse panel-body">');
                     items.push('<table class="table">');
                     items.push('<tbody>');
 
@@ -75,19 +74,19 @@ $('li#price-report50').jsonpricereport({
 //                    items.push('</tr>');
 
                     // 3. 約定値段
-                    $.each(json.prices, function(i, sessions) {
+                    $.each(json.prices, function(j, sessions) {
                         items.push('<tr>');
                         if( json.amsize >= 0 ){
-                            if( 0 == i ){
+                            if( 0 == j ){
                                 items.push('<th rowspan=' + json.amsize + '>前場</th>');
                             }
                         }
                         if( json.pmsize >= 0 ){
-                            if( json.amsize == i ){
+                            if( json.amsize == j ){
                                 items.push('<th rowspan=' + json.pmsize + '>後場</th>');
                             }
                         }
-                        items.push('<th>'+sessionName(sessions.sid)+'</th>');
+                        items.push('<th>' + sessionName(sessions.sid) + '</th>');
                         items.push('<td >'+ sessions.values[i] +'</td>');
                         items.push('</tr>');
                     });
@@ -126,10 +125,4 @@ function sessionName( sessionid ){
 	if( sessionid == "22" ){ return "第２節"; }
 	if( sessionid == "23" ){ return "第３節"; }
 	return sessionid;
-}
-function esc( val ){
-	if( val == null ){ return "&nbsp;" }
-	if( val == undefined ){ return "&nbsp;" }
-	if( val == "" ){ return "&nbsp;" } // FIXME trim未実装
-	return val;
 }
