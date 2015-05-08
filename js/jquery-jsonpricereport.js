@@ -9,7 +9,7 @@ $(function () {
             var self = $(this);
             var commodity = self.attr('datatype');
             var fileName = 'price_' + commodity + '.json?' + (new Date()).getTime();
-            var url = '/doc/market/' + fileName;
+            var url = './market/' + fileName;
             $.getJSON(url, function (json) {
                 var items = [];
                 var prices = new Array(json.colsize);
