@@ -7,27 +7,26 @@
     <title>大阪堂島商品取引所</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="container panel-group" id="accordion">
+<body class="container" id="accordion">
 
-<div class="header clearfix">
-    <!--<h3 class="">大阪堂島商品取引所</h3>-->
-    <header><a href="http://ode.or.jp/index.html" target="_pc"><span class="badge btn-success" style="">PCサイト</span></a></header>
-
-</div>
+<header>
+    <a href="//ode.or.jp/index.html" target="_pc"><span class="badge btn-success">PCサイト</span></a>
+</header>
 <div class="panel panel-default">
-    <div class="panel-heading"><small id="timestamp"></small>
+    <div class="panel-heading">
+        <small id="timestamp"></small>
         <a href="#collapsePrice" data-toggle="collapse" data-parent="#accordion">相場表</a>
     </div>
-    <ul id="collapsePrice" class="list-group block-link collapse in">
-        <li id="price-report55" class="list-group-item">東京コメ
-            <a type="button" class="btn btn-default btn-xs" href="http://ode.or.jp/market/chart_55.html" target="_chart">
+    <ul id="collapsePrice" class="list-group collapse in">
+        <li class="list-group-item" datatype="55">東京コメ
+            <a class="btn btn-default btn-xs" href="//ode.or.jp/market/chart_55.html" target="_chart">
                 <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>チャート
             </a>
         </li>
-        <li id="price-report50" class="list-group-item">大阪コメ
-            <a type="button" class="btn btn-default btn-xs" href="http://ode.or.jp/market/chart_55.html" target="_chart">
+        <li class="list-group-item" datatype="50">大阪コメ
+            <a class="btn btn-default btn-xs" href="//ode.or.jp/market/chart_55.html" target="_chart">
                 <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>チャート
             </a>
         </li>
@@ -38,7 +37,7 @@
     <div class="panel-heading">
         <a href="#collapseMember" data-toggle="collapse" data-parent="#accordion">商品先物業者_リスト</a>
     </div>
-    <div id="collapseMember" class="panel-collapse collapse panel-body list-group" aria-expanded="false">
+    <div id="collapseMember" class="list-group panel-body collapse">
         <a class="list-group-item" href="http://www.as-tem.com/" target="_member">株式会社アステム<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
         <a class="list-group-item" href="http://www.alphix.co.jp/" target="_member">株式会社アルフィックス<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
         <a class="list-group-item" href="http://www.imamura.jp/" target="_member">今村証券株式会社<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
@@ -87,12 +86,12 @@
     </div>
 </div>
 
-<footer class="footer">
+<footer>
     <p class="text-muted">&copy; 2013- Osaka Dojima Commodity Exchange.All Right Reserved.</p>
 </footer>
 
-<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/jquery-jsonpricereport.js"></script>
+<script src="js/jquery-jsonpricereport.js"></script>
 </body>
 </html>
