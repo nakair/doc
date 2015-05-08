@@ -29,6 +29,7 @@ $(function () {
                     items.push('<div class="col-xs-3 col-sm-2 col-md-2">' + json.months[i] + '</div>');
                     items.push('<div class="col-xs-4 col-sm-3 col-md-3">' + prices[i] + ' (' + durations + ')</div>');
                     items.push('<div class="col-xs-4 col-sm-3 col-md-3">' + json.volumes[i] + '</div>');
+                    items.push('<span class="glyphicon glyphicon-menu-hamburger text-muted"></span>');
                     items.push('</div>');
                     items.push('</a>');
 
