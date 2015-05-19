@@ -12,22 +12,34 @@ $(function () {
             var url = './market/' + fileName;
             $.getJSON(url, function (json) {
                 var items = [];
+                //約定値段
                 var prices = new Array(json.colsize);
                 $.each(json.prices, function (i, sessions) {
                     $.each(sessions.values, function (j, value) {
-                        if (value == "") return;
+                        if (value == '') return;
                         prices[j] = value;
                     });
                 });
                 $('#timestamp').append(commodity == '55' ? json.timestamp : '');
                 for (var i = 0; i < json.colsize; i++) {
+                    // 約定値段
+                    var price = prices[i] == undefined ? json.prevprices[i] :  prices[i];
+                    // 前日比
+                    var duration;
+                    if (json.durations[i] == '') {
+                            duration = '';
+                        if(json.prevprices[i] == '') {
+                            duration = ' (新甫)';
+                        }
+                    } else {
+                        duration = ' (' + json.durations[i] + ')';
+                    }
                     // 限月一覧 (限月、約定値段(前日比)、出来高)
-                    var durations = json.durations[i] == '' ? '新甫' : json.durations[i];
                     items.push('<li class="list-group-item">');
                     items.push('<a data-toggle="collapse" href="#collapse' + commodity + i + '">');
                     items.push('<div class="row">');
                     items.push('<div class="col-xs-3 col-sm-2 col-md-2">' + json.months[i] + '</div>');
-                    items.push('<div class="col-xs-4 col-sm-3 col-md-3">' + prices[i] + ' (' + durations + ')</div>');
+                    items.push('<div class="col-xs-4 col-sm-3 col-md-3">' + price + duration + '</div>');
                     items.push('<div class="col-xs-4 col-sm-3 col-md-3">' + json.volumes[i] + '</div>');
                     items.push('<span class="glyphicon glyphicon-menu-hamburger text-muted"></span>');
                     items.push('</div>');

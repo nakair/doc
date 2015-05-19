@@ -8,7 +8,7 @@ body {
 header {
     height: 46px;
     margin: 0 0 20px;
-    background: url(../images/logo.gif) no-repeat left center;
+    background: url(/comimg/logo.gif) no-repeat left center;
     border-bottom: 1px solid #e5e5e5;
 }
 
